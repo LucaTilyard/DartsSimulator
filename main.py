@@ -11,7 +11,7 @@ def ConvertToPolar(x, y):
     return r, theta
 
 # Load the image
-image = plt.imread('dartboard.png')
+image = plt.imread('src/dartboard.png')
 
 # Create a figure and axis
 fig, ax = plt.subplots()
