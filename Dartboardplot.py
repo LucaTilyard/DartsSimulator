@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 # Dartboard Score Sections (Angles)
 angles = np.linspace(1/20*np.pi, 2 * np.pi+1/20*np.pi, 21)  # 20 sections
 
+print(angles)
 # Rings (Dartboard Circles)
-radii = [0.028, 0.071, 0.439, 0.474, 0.935, 1.0] 
+radii = [0.028, 0.071, 0.582, 0.629, 0.953, 1.0] 
 
 fig, ax = plt.subplots(figsize=(6,6), subplot_kw={'projection': 'polar'})
 
