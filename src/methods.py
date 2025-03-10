@@ -1,7 +1,7 @@
 import numpy as np
 from numpy.f2py.auxfuncs import throw_error
 
-angels = np.linspace(1/20*np.pi, 2*np.pi+1/20*np.pi, 20)
+angels = np.linspace(1/20*np.pi, 2*np.pi+1/20*np.pi, 21)
 
 def ConvertToPolar(x, y):
     r = np.sqrt(x**2 + y**2)

@@ -4,6 +4,8 @@ from src.methods import *
 
 luke_the_fluke_shittler = Player(4)
 
+angles = np.linspace(1/20*np.pi, 2*np.pi+1/20*np.pi, 21)
+
 print(luke_the_fluke_shittler.Throw(100))
 
 # Load the image
@@ -14,6 +16,9 @@ fig, ax = plt.subplots()
 
 # Display the image
 ax.imshow(image, extent=[-1.345, 1.345, -1.345, 1.345])
+
+for angle in angles:
+    ax.plot([0, np.cos(angle)], [0, np.sin(angle)], color='black')
 
 plt.xlim(-1.345, 1.345)
 plt.ylim(-1.345, 1.345)
