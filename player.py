@@ -26,6 +26,5 @@ class Player:
         if Multiplier not in ["Single", "Double", "Treble"]:
             raise ValueError("Multiplier must be either 'Single', 'Double', 'Treble'")
 
-        # It's late, i'm tired, ive no clue why + 1 fixes this but it does so ill check it out another time. Must be sthm to do with indexs starting at 0
-        self.targeting[0] = TargetingValues.at[NumberToIndex[Number]-1, f'{Multiplier}X']
-        self.targeting[1] = TargetingValues.at[NumberToIndex[Number]-1, f'{Multiplier}Y']
+        self.targeting[0] = TargetingValues.at[NumberToIndex[Number], f'{Multiplier}X']
+        self.targeting[1] = TargetingValues.at[NumberToIndex[Number], f'{Multiplier}Y']

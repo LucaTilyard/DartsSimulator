@@ -23,3 +23,5 @@ ax.scatter(TargetingValues['TrebleX'], TargetingValues['TrebleY'], color='blue')
 ax.scatter(TargetingValues['SingleX'], TargetingValues['SingleY'], color='red')
 
 plt.show()
+
+print(TargetingValues)

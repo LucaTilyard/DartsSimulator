@@ -2,7 +2,7 @@ from player import *
 import matplotlib.pyplot as plt
 from src.methods import *
 
-luke_the_fluke_shittler = Player(21)
+luke_the_fluke_shittler = Player(25)
 
 angles = np.linspace(1/20*np.pi, 2*np.pi+1/20*np.pi, 21)
 
@@ -17,9 +17,10 @@ fig, ax = plt.subplots()
 # Display the image
 ax.imshow(image, extent=[-1.345, 1.345, -1.345, 1.345])
 
+"""
 for angle in angles:
     ax.plot([0, np.cos(angle)], [0, np.sin(angle)], color='black')
-
+"""
 plt.xlim(-1.345, 1.345)
 plt.ylim(-1.345, 1.345)
 
@@ -32,14 +33,14 @@ plt.ylim(-1.345, 1.345)
 i = 0
 score = 0
 while i < 3:
-    luke_the_fluke_shittler.Aim(18, "Single")
+    luke_the_fluke_shittler.Aim(20, "Treble")
     throw = luke_the_fluke_shittler.Throw(1)
     polar = ConvertToPolar(throw[0], throw[1])
     dartScore = CalculateValue(polar[0], polar[1])
-    print(dartScore)
+    #print(dartScore)
     plt.scatter(throw[0], throw[1], s=3, c='yellow', marker='o')
-    score += dartScore
+    #score += dartScore
     i += 1
-print(f"Total Score: {score}")
+#print(f"Total Score: {score}")
 plt.show()
 
