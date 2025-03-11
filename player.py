@@ -17,7 +17,7 @@ class Player:
     def __str__(self):
         return f"Player of skill level: {self.skill}"
 
-    def Throw(self, target):
+    def Throw(self):
          x = np.random.normal(self.targeting[0],(1/self.skill))
          y = np.random.normal(self.targeting[1],(1/self.skill))
          return np.array([x,y])
