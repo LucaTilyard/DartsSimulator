@@ -28,3 +28,40 @@ class Player:
 
         self.targeting[0] = TargetingValues.at[NumberToIndex[Number], f'{Multiplier}X']
         self.targeting[1] = TargetingValues.at[NumberToIndex[Number], f'{Multiplier}Y']
+
+    def Checkout(self, score):
+
+        #No checkpout or bust
+        if score > 170 or score <= 1:
+            return None
+
+        #define all doubles
+        doubles = {2*i: [i,"Double"] for i in range(1, 21) }
+        doubles[50] = [0 , "Double"]
+
+        #define all Singles
+        singles = {i: [i,"Single"] for i in range(1, 21)}
+        singles[25] = [0 , "Single"]
+
+        # Define trebles
+        trebles = {3*i: [i,"Treble"] for i in range(1, 21)}
+
+        #merge them
+        possible_shots = {**trebles, **singles,  **doubles}
+
+        # one dart checkouts
+        if score in doubles:
+            return [doubles[score],0,0]
+
+        # 2 darts cehckouts
+        for first in possible_shots:
+            remaining = score - first
+            if remaining in doubles:
+                return [possible_shots[first]]
+
+        # three dart checkouts
+        for first in possible_shots:
+            for second in possible_shots:
+                remaining = score - first - second
+                if remaining in doubles:
+                    return [possible_shots[first]]
