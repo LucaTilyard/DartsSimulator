@@ -48,6 +48,4 @@ def plot_dartboard():
     ax.fill_between(all_angles, radii[0], radii[1], color='green')
     ax.fill_between(all_angles, 0, radii[0], color='red')
 
-    return plt
-
-plot_dartboard().show()
+    return fig, ax

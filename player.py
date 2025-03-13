@@ -51,7 +51,7 @@ class Player:
 
         # one dart checkouts
         if score in doubles:
-            return [doubles[score],0,0]
+            return [doubles[score]]
 
         # 2 darts cehckouts
         for first in possible_shots:
