@@ -25,6 +25,8 @@ class Player:
     def Aim(self, Number, Multiplier):
         if Multiplier not in ["Single", "Double", "Treble"]:
             raise ValueError("Multiplier must be either 'Single', 'Double', 'Treble'")
-
         self.targeting[0] = TargetingValues.at[NumberToIndex[Number], f'{Multiplier}X']
         self.targeting[1] = TargetingValues.at[NumberToIndex[Number], f'{Multiplier}Y']
+
+    def change_skill(self, Skill):
+        self.skill = Skill
