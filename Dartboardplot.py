@@ -8,18 +8,23 @@ def plot_dartboard():
     # for a smooth plot
     all_angles = np.linspace(-np.pi, np.pi, 1000)
 
-    radii = [127/3400, 8/85, 99/170, 107/170, 81/85, 1.0] 
+    radii = [127/3400, 8/85, 99/170, 107/170, 81/85, 1.0, 1.2]
+
+    # Values for the plots of numbers
+    BoardOrder = [11,8,16,7,19,3,17,2,15,10,6,13,4,18,1,20,5,12,9,14]
+    number_plotting_angles = np.linspace(-np.pi, np.pi, 21)
+    number_plotting_radii = 1.11
 
     # Create a polar plot
     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 
     #Draw circles
     for r in radii:
-        ax.plot(all_angles, [r] * len(all_angles), color='grey')
+        ax.plot(all_angles, [r] * len(all_angles), color='grey',linewidth=0.8)
 
     # Draw radii
     for angle in dartboard_angles:
-        ax.plot([angle, angle], [radii[1], 1], color='grey')
+        ax.plot([angle, angle], [radii[1], 1], color='grey',linewidth=0.8)
 
     # Remove axes
     ax.set_xticklabels([])
@@ -48,6 +53,11 @@ def plot_dartboard():
     ax.fill_between(all_angles, radii[0], radii[1], color='green')
     ax.fill_between(all_angles, 0, radii[0], color='red')
 
-    return plt
+    #Outer board
+    ax.fill_between(all_angles, radii[5], radii[6], color='black')
 
-plot_dartboard().show()
+    # Draw numbers
+    for i in range(20):
+        ax.text(number_plotting_angles[i], number_plotting_radii, str(BoardOrder[i]), fontsize=13, ha='center', va='center', fontdict={'family': 'serif', 'style': 'italic', 'weight': 'bold'}, color = 'white')
+
+    return fig, ax
