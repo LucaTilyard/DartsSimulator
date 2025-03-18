@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from warnings import warn
 
 def plot_dartboard():
+
+    warn('This is deprecated in favour of the class method Dartboard.plot()', DeprecationWarning, stacklevel=2)
     # Angles of scoring sections
     dartboard_angles = np.linspace(1/20*np.pi - np.pi, np.pi+1/20*np.pi, 21)
 
@@ -61,3 +64,5 @@ def plot_dartboard():
         ax.text(number_plotting_angles[i], number_plotting_radii, str(BoardOrder[i]), fontsize=13, ha='center', va='center', fontdict={'family': 'serif', 'style': 'italic', 'weight': 'bold'}, color = 'white')
 
     return fig, ax
+
+# This Should be deprecated now but will keep for now incase there is any issues with the new class
